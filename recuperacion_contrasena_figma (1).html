@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Password Recovery — Design Screens</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --clr-bg: #f0ece6;
+    --clr-card: #faf8f5;
+    --clr-text: #2c2c2c;
+    --clr-text-muted: #8a8580;
+    --clr-accent: #3a5a40;
+    --clr-accent-light: #e8f0e9;
+    --clr-border: #ddd8d0;
+    --clr-success: #2e7d4f;
+    --clr-success-bg: #eef7f2;
+    --clr-error: #c0392b;
+    --clr-error-bg: #fdf2f1;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ─── Canvas ─── */
+  body {
+    background: #1a1a1e;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 60px 40px 80px;
+  }
+
+  /* Header */
+  .canvas-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .canvas-header .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #5a5a64;
+    margin-bottom: 12px;
+  }
+  .canvas-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+  .canvas-header p {
+    color: #5a5a64;
+    font-size: 0.82rem;
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  /* ─── Screens row ─── */
+  .screens {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  /* ─── Single screen frame ─── */
+  .screen-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .screen-label {
+    color: #5a5a64;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .screen-label .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--clr-accent);
+  }
+
+  /* Device frame */
+  .device {
+    width: 280px;
+    background: #111113;
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  }
+  .device-inner {
+    width: 100%;
+    border-radius: 20px;
+    background: var(--clr-bg);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Status bar */
+  .status-bar {
+    background: var(--clr-bg);
+    padding: 12px 20px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.6rem;
+    color: var(--clr-text);
+    font-weight: 500;
+  }
+  .status-bar .time { font-size: 0.68rem; font-weight: 600; }
+  .status-icons { display: flex; gap: 4px; align-items: center; }
+  .status-icons svg { width: 12px; height: 12px; }
+
+  /* ─── Card inside device ─── */
+  .card {
+    background: var(--clr-card);
+    margin: 10px 12px;
+    border-radius: 18px;
+    padding: 28px 22px 24px;
+    border: 1px solid var(--clr-border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  /* Icon circle */
+  .icon-wrap {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--clr-accent-light);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+  }
+  .icon-wrap svg { width: 22px; height: 22px; stroke: var(--clr-accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  .icon-wrap.success-ico { background: var(--clr-success-bg); }
+  .icon-wrap.success-ico svg { stroke: var(--clr-success); }
+
+  /* Title */
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--clr-text);
+    line-height: 1.3;
+  }
+  .card-sub {
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    color: var(--clr-text-muted);
+    font-size: 0.68rem;
+    font-weight: 300;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* Step dots */
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 16px 0 20px;
+  }
+  .step-dot {
+    width: 24px; height: 3px;
+    border-radius: 2px;
+    background: var(--clr-border);
+  }
+  .step-dot.active { background: var(--clr-accent); }
+
+  /* Label */
+  .lbl {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 500;
+    color: var(--clr-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-bottom: 5px;
+  }
+
+  /* Input mock */
+  .input-mock {
+    width: 100%;
+    height: 36px;
+    border-radius: 8px;
+    border: 1.5px solid var(--clr-border);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .input-mock svg { width: 14px; height: 14px; stroke: var(--clr-text-muted); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .input-mock .placeholder { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; color: #bbb; }
+  .input-mock .value { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; color: var(--clr-text); font-weight: 400; }
+  .input-mock.focused { border-color: var(--clr-accent); box-shadow: 0 0 0 2.5px rgba(58,90,64,0.12); }
+  .input-mock.error-input { border-color: var(--clr-error); }
+
+  /* Error msg */
+  .err-msg {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.58rem;
+    color: var(--clr-error);
+    background: var(--clr-error-bg);
+    padding: 5px 8px;
+    border-radius: 6px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  /* OTP row */
+  .otp-row {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .otp-box {
+    width: 42px; height: 48px;
+    border-radius: 8px;
+    border: 1.5px solid var(--clr-border);
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--clr-text);
+  }
+  .otp-box.filled { border-color: var(--clr-accent); background: var(--clr-accent-light); color: var(--clr-accent); }
+  .otp-box.cursor { border-color: var(--clr-accent); box-shadow: 0 0 0 2.5px rgba(58,90,64,0.12); }
+
+  /* Strength bar */
+  .strength-row {
+    display: flex; gap: 4px; margin-bottom: 4px;
+  }
+  .s-seg { flex: 1; height: 2.5px; border-radius: 2px; background: var(--clr-border); }
+  .s-seg.good { background: #27ae60; }
+  .s-seg.great { background: var(--clr-accent); }
+  .strength-txt { font-family: 'DM Sans', sans-serif; font-size: 0.56rem; color: var(--clr-text-muted); text-align: right; margin-bottom: 10px; }
+
+  /* Button */
+  .btn {
+    width: 100%;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--clr-accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.64rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.2px;
+  }
+
+  /* Back link */
+  .back-link {
+    display: flex; align-items: center; gap: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.58rem;
+    color: var(--clr-text-muted);
+    margin-bottom: 14px;
+  }
+  .back-link svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+  /* Resend */
+  .resend {
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.58rem;
+    color: var(--clr-accent);
+    margin-top: 8px;
+  }
+
+  /* Footer link */
+  .footer-link {
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.58rem;
+    color: var(--clr-text-muted);
+    margin-top: 16px;
+  }
+  .footer-link span { color: var(--clr-accent); font-weight: 500; }
+
+  /* Checkmark */
+  .check-circle {
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    background: var(--clr-success-bg);
+    border: 2px solid var(--clr-success);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+  }
+  .check-circle svg { width: 28px; height: 28px; stroke: var(--clr-success); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Bottom nav bar mock */
+  .nav-bar {
+    background: rgba(250,248,245,0.92);
+    backdrop-filter: blur(8px);
+    margin: 8px 0 0;
+    padding: 10px 24px 16px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  .nav-dot { width: 100px; height: 4px; background: #2c2c2c; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="canvas-header">
+  <div class="tag">Figma Design — Mobile</div>
+  <h1>Recuperación de Contraseña</h1>
+  <p>Flujo completo · 4 pantallas · iOS Style</p>
+</div>
+
+<!-- Screens -->
+<div class="screens">
+
+  <!-- ════ SCREEN 1: Email ════ -->
+  <div class="screen-wrap">
+    <div class="screen-label"><span class="dot"></span> 1 — Correo</div>
+    <div class="device">
+      <div class="device-inner">
+        <!-- Status bar -->
+        <div class="status-bar">
+          <span class="time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div class="card-title">Recuperar contraseña</div>
+          <div class="card-sub">Ingresa tu correo y te enviaremos<br/>un código de verificación.</div>
+          <div class="steps">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+          </div>
+          <div class="lbl">Correo electrónico</div>
+          <div class="input-mock focused">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span class="value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85f0f6f0e4f7eceac5e6eaf7f7e0eaabe6eae8">[email&#160;protected]</a></span>
+          </div>
+          <div class="btn">Enviar código</div>
+          <div class="footer-link">¿Recordaste tu contraseña? <span>Inicia sesión</span></div>
+        </div>
+        <div class="nav-bar"><div class="nav-dot"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SCREEN 2: OTP ════ -->
+  <div class="screen-wrap">
+    <div class="screen-label"><span class="dot"></span> 2 — Código OTP</div>
+    <div class="device">
+      <div class="device-inner">
+        <div class="status-bar">
+          <span class="time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+          </div>
+        </div>
+        <div class="card">
+          <div class="back-link">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Atrás
+          </div>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="card-title">Código de verificación</div>
+          <div class="card-sub">Código enviado a <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff8a8c8a9e8d9690bf9c908d8d9a90d19c9092">[email&#160;protected]</a></strong></div>
+          <div class="steps">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+          </div>
+          <div class="otp-row">
+            <div class="otp-box filled">1</div>
+            <div class="otp-box filled">2</div>
+            <div class="otp-box cursor">·</div>
+            <div class="otp-box"></div>
+          </div>
+          <div class="btn">Verificar código</div>
+          <div class="resend">Reenviar código</div>
+          <div class="footer-link">¿Recordaste tu contraseña? <span>Inicia sesión</span></div>
+        </div>
+        <div class="nav-bar"><div class="nav-dot"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SCREEN 3: Nueva contraseña ════ -->
+  <div class="screen-wrap">
+    <div class="screen-label"><span class="dot"></span> 3 — Nueva contraseña</div>
+    <div class="device">
+      <div class="device-inner">
+        <div class="status-bar">
+          <span class="time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+          </div>
+        </div>
+        <div class="card">
+          <div class="back-link">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Atrás
+          </div>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="card-title">Nueva contraseña</div>
+          <div class="card-sub">Crea una contraseña segura<br/>para tu cuenta.</div>
+          <div class="steps">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+          </div>
+          <div class="lbl">Nueva contraseña</div>
+          <div class="input-mock focused">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span class="value">••••••••</span>
+          </div>
+          <div class="strength-row">
+            <div class="s-seg great"></div>
+            <div class="s-seg great"></div>
+            <div class="s-seg good"></div>
+            <div class="s-seg"></div>
+          </div>
+          <div class="strength-txt">Buena</div>
+          <div class="lbl">Confirmar contraseña</div>
+          <div class="input-mock">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span class="placeholder">••••••••</span>
+          </div>
+          <div class="btn">Cambiar contraseña</div>
+          <div class="footer-link">¿Recordaste tu contraseña? <span>Inicia sesión</span></div>
+        </div>
+        <div class="nav-bar"><div class="nav-dot"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SCREEN 4: Éxito ════ -->
+  <div class="screen-wrap">
+    <div class="screen-label"><span class="dot"></span> 4 — Éxito</div>
+    <div class="device">
+      <div class="device-inner">
+        <div class="status-bar">
+          <span class="time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+          </div>
+        </div>
+        <div class="card" style="padding-top: 48px; padding-bottom: 32px;">
+          <div class="check-circle">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="card-title">¡Contraseña<br/>actualizada!</div>
+          <div class="card-sub" style="margin-bottom: 24px;">Tu contraseña ha sido cambiada<
