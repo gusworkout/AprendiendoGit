@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones - Insteupar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Inscripciones Abiertas en INSTEUPAR</h1>
+            <p>Elige tu camino educativo y comienza tu futuro profesional</p>
+        </div>
+
+        <!-- Banner de Selección -->
+        <div id="selectionBanner" class="selection-banner">
+            <div class="option-card" onclick="selectOption('tecnico')">
+                <div class="icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Cursos Técnicos</h2>
+                <p>Programas técnicos profesionales con certificación oficial. Duración de 6 a 12 meses.</p>
+            </div>
+
+            <div class="option-card" onclick="selectOption('normal')">
+                <div class="icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h2>Cursos Normales</h2>
+                <p>Cursos cortos y especializados para desarrollar habilidades específicas.</p>
+            </div>
+        </div>
+
+        <!-- Formulario -->
+        <div id="formContainer" class="form-container">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i> Volver a selección
+            </button>
+
+            <div class="form-header">
+                <h2 id="formTitle">Formulario de Inscripción</h2>
+            </div>
+
+            <form id="inscriptionForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Nombre Completo <span class="required">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+                </div>
+
+                <div class="form-group">
+                    <label>Dirección <span class="required">*</span></label>
+                    <input type="text" id="direccion" name="direccion" required placeholder="Ingresa tu dirección">
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono <span class="required">*</span></label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="Ingresa tu número de teléfono">
+                </div>
+
+                <div class="form-group">
+                    <label>Programa de interés <span class="required">*</span></label>
+                    <select id="programa" name="programa" required>
+                        <option value="">Selecciona un programa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Correo electrónico (opcional)</label>
+                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">He leído y acepto las <a href="https://insteupar.edu.co/politica-privacidad/" target="_blank">políticas de privacidad</a> <span class="required">*</span></label>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i> Enviar Inscripción
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Logos Flotantes -->
+    <div class="floating-buttons">
+        <a href="https://www.instagram.com/insteupar/" target="_blank" class="floating-btn instagram-btn" title="Síguenos en Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/573001234567" target="_blank" class="floating-btn whatsapp-btn" title="Contáctanos por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
