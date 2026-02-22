@@ -1,0 +1,42 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fe430469;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navegación */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav a:hover {
+    color: #00bcd4;
+}
