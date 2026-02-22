@@ -1,3 +1,4 @@
+// Programas disponibles
 const programasTecnicos = [
     'Técnico en Auxiliar Administrativo',
     'Técnico en Atención a la primera Infancia',

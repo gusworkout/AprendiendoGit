@@ -1,3 +1,13 @@
+@import url('https://fonts.cdnfonts.com/css/arsenica');
+
+:root {
+    --charcoal: #333333;
+    --orange: #FE4104;
+    --navy: #234068;
+    --cyan: #00C8DF;
+    --rose: #D0799A;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +15,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 100%);
     min-height: 100vh;
     padding: 20px;
 }
@@ -28,11 +38,14 @@ body {
     font-size: 2.5em;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: var(--cyan);
+    letter-spacing: 0.02em;
 }
 
 .header p {
     font-size: 1.2em;
     opacity: 0.9;
+    color: rgba(255,255,255,0.85);
 }
 
 /* Banner de Selección */
@@ -51,37 +64,55 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-top: 5px solid var(--cyan);
 }
 
 .option-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    border-top-color: var(--orange);
 }
 
 .option-card.selected {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 100%);
     color: white;
 }
 
 .option-card .icon {
     font-size: 4em;
     margin-bottom: 20px;
-    color: #667eea;
+    color: var(--cyan);
+}
+
+.option-card:hover .icon {
+    color: var(--orange);
 }
 
 .option-card.selected .icon {
-    color: white;
+    color: var(--cyan);
 }
 
 .option-card h2 {
     font-size: 1.8em;
     margin-bottom: 15px;
+    color: var(--navy);
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    letter-spacing: 0.03em;
+}
+
+.option-card.selected h2 {
+    color: var(--cyan);
 }
 
 .option-card p {
     font-size: 1em;
     line-height: 1.6;
     opacity: 0.8;
+    color: var(--charcoal);
+}
+
+.option-card.selected p {
+    color: rgba(255,255,255,0.85);
 }
 
 /* Formulario */
@@ -92,6 +123,7 @@ body {
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     animation: fadeIn 0.5s ease;
+    border-top: 6px solid var(--orange);
 }
 
 .form-container.show {
@@ -115,9 +147,11 @@ body {
 }
 
 .form-header h2 {
-    color: #667eea;
+    color: var(--orange);
     font-size: 2em;
     margin-bottom: 10px;
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    letter-spacing: 0.03em;
 }
 
 .back-button {
@@ -129,10 +163,13 @@ body {
     font-size: 1em;
     margin-bottom: 20px;
     transition: background 0.3s;
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    color: var(--charcoal);
 }
 
 .back-button:hover {
-    background: #d0d0d0;
+    background: var(--cyan);
+    color: white;
 }
 
 .form-group {
@@ -142,12 +179,13 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #333;
+    color: var(--charcoal);
     font-weight: 600;
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
 }
 
 .form-group label .required {
-    color: #e74c3c;
+    color: var(--orange);
 }
 
 .form-group input,
@@ -158,12 +196,15 @@ body {
     border-radius: 8px;
     font-size: 1em;
     transition: border-color 0.3s;
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    color: var(--charcoal);
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(0, 200, 223, 0.15);
 }
 
 .checkbox-group {
@@ -176,16 +217,28 @@ body {
 .checkbox-group input[type="checkbox"] {
     width: auto;
     cursor: pointer;
+    accent-color: var(--orange);
 }
 
 .checkbox-group label {
     margin: 0;
     cursor: pointer;
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    color: var(--charcoal);
+}
+
+.checkbox-group label a {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+.checkbox-group label a:hover {
+    color: var(--orange);
 }
 
 .submit-button {
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--navy) 0%, var(--orange) 100%);
     color: white;
     border: none;
     padding: 15px;
@@ -194,11 +247,13 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    letter-spacing: 0.05em;
 }
 
 .submit-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px rgba(254, 65, 4, 0.4);
 }
 
 .submit-button:disabled {
