@@ -168,3 +168,102 @@ body {
         gap: 30px;
     }
 }
+
+.header-simple {
+    background: #002855;
+    padding: 20px 10%;
+    color: white;
+}
+
+.historia, .mision-vision, .ubicacion {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.historia-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mision-vision {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    background: white;
+    padding: 30px;
+    width: 40%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.grid-carreras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 60px 10%;
+}
+
+.card-expand {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.card-expand img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-expand .info {
+    display: none;
+    padding: 20px;
+}
+
+.card-expand.active .info {
+    display: block;
+}
+
+.form-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form select {
+    padding: 10px;
+}
+
+form button {
+    padding: 12px;
+    background: #00509d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 60px 10%;
+    gap: 20px;
+}
+
+.blog-card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
