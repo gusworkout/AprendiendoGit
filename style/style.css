@@ -21,12 +21,86 @@ body {
     padding: 20px;
 }
 
+/* ── HEADER ────────────────────────────────────────────── */
+.header-simple {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin: -20px -20px 30px -20px; /* stretch edge-to-edge over body padding */
+    padding: 0 40px;
+}
+
+.top-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    height: 70px;
+}
+
+.logo {
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--cyan);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-family: 'Arsenica', 'Arsenica Antiqua', Georgia, serif;
+    font-size: 0.95em;
+    letter-spacing: 0.03em;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.nav a:hover,
+.nav a[href="registration.html"] {
+    color: var(--cyan);
+    border-bottom-color: var(--cyan);
+}
+
+/* ── RESPONSIVE HEADER ──────────────────────────────────── */
+@media (max-width: 900px) {
+    .header-simple {
+        padding: 0 20px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 14px;
+        align-items: flex-start;
+    }
+
+    .nav {
+        gap: 16px;
+    }
+}
+
+/* ── CONTAINER ──────────────────────────────────────────── */
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Header */
+/* Header de sección */
 .header {
     text-align: center;
     color: white;
@@ -300,7 +374,7 @@ body {
     background: #25D366;
 }
 
-/* Responsive */
+/* Responsive general */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 2em;
