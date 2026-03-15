@@ -1,10 +1,17 @@
 @import url('https://fonts.cdnfonts.com/css/arsenica');
 
+/* 
+#333333
+#FE4104
+#234068
+#00C8DF*/
+
+
 /* HEADER */
 .header {
-    background: linear-gradient(to right, #002855, #00509d);
-    color: white;
-    padding-bottom: 40px;
+    background: linear-gradient(to right, #FE4104,#fe4304d3);
+    color: rgb(238, 236, 236);
+    padding-bottom:0px;
 }
 
 .top-bar {
@@ -15,7 +22,7 @@
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -28,7 +35,7 @@
 }
 
 .nav a:hover {
-    color: #ffd60a;
+    color: #00C8DF;
 }
 
 /* BANNER */
@@ -37,6 +44,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 40px 10%;
+    padding-bottom:0px;
 }
 
 .banner-text h1 {
@@ -49,8 +57,10 @@
 }
 
 .banner-img img {
-    width: 300px;
+    width: 400px;
     border-radius: 10px;
+    padding-bottom: 0px;
+    margin-bottom: -5px;
 }
 
 /* DESTACADOS */
@@ -60,12 +70,20 @@
     padding: 60px 10%;
     background: white;
     text-align: center;
+    gap: 25px;
 }
 
 .destacados .item i {
-    font-size: 40px;
+    
     color: #00509d;
     margin-bottom: 15px;
+}
+.destacados h3{
+    margin: 15px;
+font-size: 25px;
+}
+.destacados p{
+font-size: 15px;
 }
 
 /* ABOUT */
@@ -129,6 +147,7 @@
 }
 
 .redes i {
+    
     font-size: 30px;
     margin: 20px;
     cursor: pointer;
@@ -259,13 +278,7 @@ form button {
 
 
 
-:root {
-    --charcoal: #333333;
-    --orange: #FE4104;
-    --navy: #234068;
-    --cyan: #00C8DF;
-    --rose: #D0799A;
-}
+
 
 * {
     margin: 0;
@@ -289,8 +302,8 @@ body {
 .header {
     text-align: center;
     color: white;
-    margin-bottom: 40px;
-    padding: 20px;
+    
+    
 }
 
 .header h1 {
@@ -579,3 +592,4 @@ body {
         font-size: 1.5em;
     }
 }
+
