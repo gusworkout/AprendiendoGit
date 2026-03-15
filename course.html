@@ -1,130 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carreras Técnicas - INSTEUPAR</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="js/carreras.js"></script>
 </head>
-
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-        </div>
 
+<header class="header-simple">
+    <div class="top-bar">
+        <div class="logo">INSTEUPAR</div>
         <nav class="nav">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">La institución</a></li>
-                <li><a href="#">Programas</a></li>
-                <li><a href="#">Cursos</a></li>
-                <li><a href="#">Inscripción</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
+            <a href="index.html">Inicio</a>
+            <a href="about.html">Institución</a>
+            <a href="programs.html">Carreras Técnicas</a>
+            <a href="course.html">Cursos</a>
+            <a href="registration.html">Inscripciones</a>
+            <a href="blog.html">Blog</a>
         </nav>
-    </header>
+    </div>
+</header>
 
+<section class="grid-carreras">
 
-
-
-
-    <h1>cursos cortos</h1>
-    <p>
-        En Insteupar, nos comprometemos a brindarte una experiencia educativa de calidad, diseñada para satisfacer tus
-        necesidades de formación continua y desarrollo profesional en Valledupar. Ofrecemos diferentes cursos cortos y
-        rápidos, cuidadosamente seleccionados para proporcionarte las habilidades y conocimientos más relevantes y
-        actualizados en un período de tiempo eficiente.
-        Con un enfoque práctico y orientado a resultados, nuestros cursos están dirigidos por profesionales en cada
-        área, garantizando un aprendizaje efectivo y significativo.
-        A continuación, encontrarás el listado completo de los cursos que ofrecemos:
-
-    </p>
-    <div class="grid">
-
-        <a href="#curso1" class="card" id="c1">
-            <h2>mercados y ventas </h2>
-            <p>Aprende la estructura básica de páginas web.</p>
-        </a>El curso de Mercadeo y Ventas en Insteupar (Instituto Técnico de
-        Valledupar) tiene una duración de 1 semestre (158 horas), enfocado
-        en habilidades comerciales, desde la investigación de mercado hasta
-        la postventa
-
-        <a href="#curso1" class="card" id="c1">
-            <h2>Curso de auxiliar en sistemas </h2>
-            <p>Aprende la estructura básica de páginas web.</p>
-        </a>prepara para analizar, diseñar, desarrollar e implementar tecnología
-         de información en entornos empresariales. Ofrece formación práctica en 
-         el sector productivo, con enfoque en calidad y mejora continua. 
-
-
-
-        <a href="#curso2" class="card" id="c2">
-            <h2>Curso de Auxiliar en sistemas nivel II</h2>
-            <p>Diseña páginas atractivas y modernas.</p>
-        </a>Auxiliar en Sistemas Nivel I y II.
-        Detalles del Curso (Nivel 1):
-        Duración: 1 Semestre / 158 horas
-        Requisitos: Haber cursado o estar cursando 5° primaria.
-        Certificación: Conocimientos académicos en Auxiliar en sistemas.
-        Nivel 2 (Avanzado): El Curso De Auxiliar En Sistemas Avanzado -
-        Insteupar generalmente se ofrece como un nivel avanzado tras el
-        primero, para profundizar en soporte técnico
-
-        <a href="#curso2" class="card" id="c2">
-            <h2>Curso de Mantenimiento y reparación de computadores</h2>
-            <p>Diseña páginas atractivas y modernas.</p>
-        </a>El curso de Mantenimiento y Reparación de Computadores en Insteupar
-        (Valledupar) tiene una duración de 1 semestre (155 horas). Ofrece
-        formación en hardware y software
-
-        <a href="#curso3" class="card" id="c3">
-            <h2>Curso de Diseño Gráfico</h2>
-            <p>Agrega interactividad a tus proyectos.</p>
-        </a>(manejo de herramientas visuales, publicidad)
-        El curso de Diseño Gráfico en Insteupar (Valledupar) tiene una duración
-        de 1 semestre (aproximadamente 150 horas), enfocado en brindar
-        conocimientos académicos básicos, según su oferta técnica.
-        Detalles del programa en Insteupar:
-        Duración: 1 Semestre.
-        Intensidad: 150 Horas.
-        Certificación: Conocimientos académicos en Diseño Gráfico.
-
-        <a href="#curso3" class="card" id="c3">
-            <h2>Curso de Caja Registradora</h2>
-            <p>Agrega interactividad a tus proyectos.</p>
-        </a>curso de Caja Registradora en Insteupar (Valledupar) tiene una
-        duración de 6 semanas (50 horas)
-
-        Detalles claves del curso en Insteupar:
-        Intensidad: 50 horas totales.
-        Duración: 6 semanas.
-        Requisito: Haber cursado o estar cursando 5° primaria.
-        Certificación: Conocimientos académicos en Caja Registradora.
-
-
+    <div class="card-expand">
+        <img src="img/sistemas.jpg">
+        <h3>Técnico en Sistemas</h3>
+        <div class="info">
+            <p>Duración: 2 años</p>
+            <p>Enfoque en desarrollo y redes.</p>
+            <a href="inscripciones.html" class="btn">Inscribirse</a>
+        </div>
     </div>
 
-    <!-- Secciones expandibles -->
-    <div id="curso1" class="expandido">
-        <a href="#" class="cerrar">X</a>
-        <h2>Curso Completo de HTML</h2>
-        <p>Contenido detallado del curso, duración, módulos y objetivos.</p>
+    <div class="card-expand">
+        <img src="img/enfermeria.jpg">
+        <h3>Técnico en Enfermería</h3>
+        <div class="info">
+            <p>Duración: 2 años</p>
+            <p>Prácticas hospitalarias.</p>
+            <a href="inscripciones.html" class="btn">Inscribirse</a>
+        </div>
     </div>
 
-    <div id="curso2" class="expandido">
-        <a href="#" class="cerrar">X</a>
-        <h2>Curso Completo de CSS</h2>
-        <p>Aprenderás Flexbox, Grid, animaciones y diseño responsive.</p>
-    </div>
+</section>
 
-    <div id="curso3" class="expandido">
-        <a href="#" class="cerrar">X</a>
-        <h2>Curso Completo de JavaScript</h2>
-        <p>Variables, funciones, DOM, eventos y proyectos prácticos.</p>
-    </div>
+<footer class="footer">
+    <p>© 2025 INSTEUPAR</p>
+</footer>
+
 </body>
-
-</html>
-
 </html>
