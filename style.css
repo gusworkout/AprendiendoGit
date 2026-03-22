@@ -1,9 +1,24 @@
 @import url('https://fonts.cdnfonts.com/css/arsenica');
 
+:root {
+    --primary: #FE4104;
+    --secondary: #00CDFF;
+    --dark: #333333;
+    --light: #f9f9f9;
+    --white: #ffffff;
+}
+
+/* GLOBAL */
+body {
+    font-family: 'Arsenica', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+}
+
 /* HEADER */
 .header {
-    background: linear-gradient(to right, #002855, #00509d);
-    color: white;
+    background: linear-gradient(to right, var(--dark), #000);
+    color: var(--white);
     padding-bottom: 40px;
 }
 
@@ -17,10 +32,11 @@
 .logo {
     font-size: 28px;
     font-weight: bold;
+    color: var(--primary);
 }
 
 .nav a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     margin-left: 20px;
     font-weight: 500;
@@ -28,7 +44,7 @@
 }
 
 .nav a:hover {
-    color: #ffd60a;
+    color: var(--secondary);
 }
 
 /* BANNER */
@@ -42,15 +58,11 @@
 .banner-text h1 {
     font-size: 40px;
     margin-bottom: 10px;
+    color: var(--primary);
 }
 
 .banner-text p {
     font-size: 18px;
-}
-
-.banner-img img {
-    width: 300px;
-    border-radius: 10px;
 }
 
 /* DESTACADOS */
@@ -58,13 +70,13 @@
     display: flex;
     justify-content: space-around;
     padding: 60px 10%;
-    background: white;
+    background: var(--white);
     text-align: center;
 }
 
 .destacados .item i {
     font-size: 40px;
-    color: #00509d;
+    color: var(--secondary);
     margin-bottom: 15px;
 }
 
@@ -89,19 +101,26 @@
 .publicidad {
     text-align: center;
     padding: 60px;
-    background: #00509d;
-    color: white;
+    background: var(--primary);
+    color: var(--white);
 }
 
+/* BOTONES */
 .btn {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 25px;
-    background: #ffd60a;
-    color: #000;
+    padding: 12px 25px;
+    background: var(--secondary);
+    color: var(--dark);
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--dark);
+    color: var(--white);
 }
 
 /* GRID */
@@ -113,17 +132,23 @@
 }
 
 .card {
-    background: white;
+    background: var(--white);
     padding: 30px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-bottom: 4px solid var(--primary);
 }
 
 /* CONTACTO */
 .contacto {
-    background: #002855;
-    color: white;
+    background: var(--dark);
+    color: var(--white);
     text-align: center;
     padding: 80px 20px;
 }
@@ -132,82 +157,53 @@
     font-size: 30px;
     margin: 20px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.redes i:hover {
+    color: var(--secondary);
 }
 
 /* FOOTER */
 .footer {
-    background: #001d3d;
-    color: white;
+    background: #111;
+    color: var(--white);
     text-align: center;
     padding: 20px;
 }
 
-/* RESPONSIVE */
-@media(max-width: 900px) {
-    .banner, .about {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about img {
-        width: 100%;
-    }
-
-    .destacados {
-        flex-direction: column;
-        gap: 30px;
-    }
+/* FORMULARIO */
+form input, form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.header-simple {
-    background: #002855;
-    padding: 20px 10%;
-    color: white;
+form button {
+    padding: 12px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.historia, .mision-vision, .ubicacion {
-    padding: 60px 10%;
-    text-align: center;
+form button:hover {
+    background: var(--secondary);
+    color: var(--dark);
 }
 
-.historia-content {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.mision-vision {
-    display: flex;
-    justify-content: space-around;
-}
-
-.box {
-    background: white;
-    padding: 30px;
-    width: 40%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.grid-carreras {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 60px 10%;
-}
-
+/* CARDS EXPAND */
 .card-expand {
-    background: white;
+    background: var(--white);
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: 0.4s;
 }
 
-.card-expand img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.card-expand:hover {
+    transform: scale(1.02);
 }
 
 .card-expand .info {
@@ -219,47 +215,10 @@
     display: block;
 }
 
-.form-section {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-form input, form select {
-    padding: 10px;
-}
-
-form button {
-    padding: 12px;
-    background: #00509d;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 60px 10%;
-    gap: 20px;
-}
-
+/* BLOG */
 .blog-card {
-    background: white;
+    background: var(--white);
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-
-
-:root {
-    --charcoal: #333333;
-    --orange: #FE4104;
+    border-left: 4px solid var(--primary);
 }
