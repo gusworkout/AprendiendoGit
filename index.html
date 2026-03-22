@@ -1,140 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insteupar - TU PROPÓSITO, NUESTRA MISIÓN.</title>
-    <link rel="stylesheet" href="style.css">
+    <title>INSTEUPAR - Tu propósito, nuestra misión</title>
+
+    <!-- ICONOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- FUENTE -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/arsenica">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="top-bar">
-            <div class="logo">INSTEUPAR</div>
-            <nav class="nav">
-                 <a href="index.html">Inicio</a>
+<!-- HEADER / HERO -->
+<header class="header">
+    <div class="top-bar">
+        <div class="logo">INSTEUPAR</div>
+
+        <nav class="nav">
+            <a href="index.html" class="active">Inicio</a>
             <a href="about.html">Institución</a>
             <a href="programs.html">Carreras Técnicas</a>
             <a href="course.html">Cursos</a>
             <a href="registration.html">Inscripciones</a>
             <a href="blog.html">Blog</a>
-            </nav>
+        </nav>
+    </div>
+
+    <div class="banner container">
+        <div class="banner-text">
+            <h1>Tu propósito, nuestra misión</h1>
+            <p>Educación técnica con visión y excelencia</p>
         </div>
 
-        <div class="banner">
-            <div class="banner-text">
-                <h1>TU PROPÓSITO, NUESTRA MISIÓN.</h1></h1>
-                <p>“Educación técnica con visión y excelencia”</p>
-            </div>
-            <div class="banner-img">
-                <img src="assets/foto_directora.webp" alt="Directora de la institución">
-            </div>
+        <div class="banner-img">
+            <img src="assets/foto_directora.webp" alt="Directora de INSTEUPAR">
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- PRIMER SCROLL -->
-    <section class="destacados">
-        <div class="item">
-            <i class="fas fa-graduation-cap"></i>
-            <h3>Educación Técnica asecible</h3>
-            <p>Carreras y cursos diseñados para todos los presupuestos,</p>
-        </div>
-        <div class="item">
-            <i class="fas fa-book-open"></i>
-            <h3>Aprendizaje practico y real</h3>
-            <p>Aprendizaje basado en la experiencia y en entornos reales que fortalecen tus habilidades.</p>
-        </div>
-        <div class="item">
-            <i class="fas fa-chart-line"></i>
-            <h3>Crecimiento personal y etico</h3>
-            <p>Fomentamos valores, disciplina y crecimiento integral en cada proceso de formación técnica.</p>
-        </div>
-        <div class="item">
-            <i class="fas fa-briefcase"></i>
-            <h3>Proyección Laboral segura</h3>
-            <p>Te brindamos bases firmes para adaptarte y destacar en los distintos campos profesionales</p>
-        </div>
-    </section>
+<!-- BENEFICIOS -->
+<section class="destacados container">
 
-    <!-- SEGUNDO SCROLL -->
-    <section class="about">
-        <div class="about-img">
-            <img src="img/institucion.jpg" alt="Institución">
-        </div>
-        <div class="about-text">
-            <h2>Sobre INSTEUPAR</h2>
-            <p>
-               Sobre INSTEUPAR Más que un instituto, una familia educativa Somos un instituto técnico líder que ofrece una amplia gama de cursos y carreras técnicas en Valledupar diseñados para prepararte para el mercado laboral actual. En Insteupar, creemos en proporcionar una educación de calidad que te equipará con las habilidades prácticas y el conocimiento especializado que necesitas para destacarte en tu campo elegido.
-, 
-            </p>
-        </div>
-    </section>
+    <article class="item">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Educación accesible</h3>
+        <p>Carreras y cursos diseñados para todos los presupuestos.</p>
+    </article>
 
-    <!-- TERCER SCROLL -->
-    <section class="publicidad">
-        <h2>Inscripciones Abiertas 2026</h2>
-        <p>Matrículate ya. con precios asecibles</p>
-        <a href="inscripciones.html" class="btn">Inscribirse Ahora</a>
-    </section>
+    <article class="item">
+        <i class="fas fa-book-open"></i>
+        <h3>Aprendizaje práctico</h3>
+        <p>Formación basada en experiencias reales.</p>
+    </article>
 
-    <!-- CURSOS -->
-    <section class="cursos">
-        <h2>Nuestros Cursos</h2>
-        <div class="grid">
-            <div class="card">Diseño Gráfico</div>
-            <img src="assets/auxiliares/Diseño grafico.jpg" alt="">
-            <div class="card">auxiliar en sistema</div>
-            <img src="assets/auxiliares/Sistemas.webp" alt="">
-            <div class="card">auxiliar en sistema 2</div>
-            <img src="assets/auxiliares/Sistemas.webp" alt="">
-            <div class="card">mercadeo y ventas</div>
-            <img src="assets/auxiliares/Mercadeo y ventas.jpg" alt="">
-            <div class="card">caja registradora</div>
-            <img src="assets/auxiliares/MANEJO-DE-CJA-REGISTRADORA-1920X580.jpg" alt="">
-            <div class="card">mantenimiento y reparacion de computadores</div>
-            <img src="assets/auxiliares/mantenimiento.jpg" alt="">
-        </div>
-    </section>
+    <article class="item">
+        <i class="fas fa-chart-line"></i>
+        <h3>Crecimiento integral</h3>
+        <p>Desarrollamos habilidades técnicas y valores.</p>
+    </article>
 
-    <!-- CARRERAS -->
-    <section class="carreras">
-        <h2>Carreras Destacadas</h2>
-        <div class="grid">
-            <div class="card">Técnico en Sistemas</div>
-            <img src="assets/tecnicos/sistemas.jpg" alt="">
-            <div class="card">seguridad ocupacional</div>
-            <img src="assets/tecnicos/seguridad-ocupacional.webp" alt="">
-            <div class="card"> auxiliar Administrativo</div>
-            <img src="assets/tecnicos/auxiliar administrativo.jpg" alt="">
-             <div class="card"> asistente Administrativo y gerencia</div>
-             <img src="assets/tecnicos/asistente-administrativo.jpg" alt="">
-              <div class="card"> investigasion judicial criminalista</div>
-              <img src="assets/tecnicos/investigacion judicial y criminalistica.jpg" alt="">
-               <div class="card"> atencion a primera invancia</div>
-               <img src="assets/tecnicos/atencion a la primera infancia.avif" alt="">
-        </div>
-    </section>
+    <article class="item">
+        <i class="fas fa-briefcase"></i>
+        <h3>Proyección laboral</h3>
+        <p>Prepárate para destacar en el mundo laboral.</p>
+    </article>
 
-    <!-- UBICACIÓN -->
-    <section class="contacto  316 4755555">
-        <h2>Encuéntranos</h2>
-        <p>📍 Dirección: Cra15 #13B-60 Barrio Alfonso López Valledupar - Colombia</p>
-        <div class="redes">
-            <i class="fab fa-facebook">Insteupar</i>
-            <i class="fab fa-instagram">Insteupar</i>
-            <i class="fab fa-whatsapp">Insteupar</i>
-        </div>
-    </section>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>© 2026 INSTEUPAR - Todos los derechos reservados</p>
-        <p>Términos y Condiciones | Política de Privacidad</p>
-    </footer>
+<!-- SOBRE NOSOTROS -->
+<section class="about container">
+
+    <div class="about-img">
+        <img src="img/institucion.jpg" alt="Instalaciones INSTEUPAR">
+    </div>
+
+    <div class="about-text">
+        <h2>Sobre INSTEUPAR</h2>
+
+        <p>
+            Somos un instituto técnico en Valledupar comprometido con la formación de profesionales
+            capacitados para el mundo laboral actual.
+        </p>
+
+        <p>
+            Ofrecemos programas técnicos y cursos diseñados para desarrollar habilidades prácticas,
+            combinando conocimiento teórico con experiencia real.
+        </p>
+
+        <a href="about.html" class="btn">Conocer más</a>
+    </div>
+
+</section>
+
+<!-- LLAMADO A LA ACCIÓN -->
+<section class="publicidad">
+    <h2>Inscripciones abiertas 2026</h2>
+    <p>Matricúlate ahora con precios accesibles</p>
+    <a href="registration.html" class="btn">Inscribirse ahora</a>
+</section>
+
+<!-- CURSOS -->
+<section class="cursos container">
+
+    <h2 class="section-title">Cursos destacados</h2>
+
+    <div class="grid">
+
+        <article class="card">
+            <img src="assets/auxiliares/Diseño grafico.jpg" alt="Diseño gráfico">
+            <h3>Diseño gráfico</h3>
+        </article>
+
+        <article class="card">
+            <img src="assets/auxiliares/Sistemas.webp" alt="Auxiliar en sistemas">
+            <h3>Auxiliar en sistemas</h3>
+        </article>
+
+        <article class="card">
+            <img src="assets/auxiliares/Mercadeo y ventas.jpg" alt="Mercadeo y ventas">
+            <h3>Mercadeo y ventas</h3>
+        </article>
+
+        <article class="card">
+            <img src="assets/auxiliares/mantenimiento.jpg" alt="Mantenimiento de computadores">
+            <h3>Mantenimiento de computadores</h3>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- CARRERAS -->
+<section class="carreras container">
+
+    <h2 class="section-title">Carreras técnicas</h2>
+
+    <div class="grid">
+
+        <article class="card">
+            <img src="assets/tecnicos/sistemas.jpg" alt="Técnico en sistemas">
+            <h3>Técnico en sistemas</h3>
+        </article>
+
+        <article class="card">
+            <img src="assets/tecnicos/seguridad-ocupacional.webp" alt="Seguridad ocupacional">
+            <h3>Seguridad ocupacional</h3>
+        </article>
+
+        <article class="card">
+            <img src="assets/tecnicos/auxiliar administrativo.jpg" alt="Auxiliar administrativo">
+            <h3>Auxiliar administrativo</h3>
+        </article>
+
+        <article class="card">
+            <img src="assets/tecnicos/investigacion judicial y criminalistica.jpg" alt="Investigación judicial">
+            <h3>Investigación judicial</h3>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto">
+
+    <h2>Contáctanos</h2>
+
+    <p>📍 Cra 15 #13B-60, Valledupar - Cesar</p>
+    <p>📞 316 475 5555</p>
+
+    <div class="redes">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 INSTEUPAR - Todos los derechos reservados</p>
+    <p>Términos y condiciones | Política de privacidad</p>
+</footer>
 
 </body>
 </html>
-
-
