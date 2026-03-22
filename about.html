@@ -5,89 +5,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Institución - INSTEUPAR</title>
+
+    <!-- FUENTE -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/arsenica">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header-simple">
-        <div class="top-bar">
-            <div class="logo">INSTEUPAR</div>
+<!-- HEADER -->
+<header class="header-simple">
+    <div class="top-bar">
+        <div class="logo">INSTEUPAR</div>
 
-            <nav class="nav">
-                <a href="index.html">Inicio</a>
-                <a href="about.html" class="active">Institución</a>
-                <a href="programs.html">Carreras Técnicas</a>
-                <a href="course.html">Cursos</a>
-                <a href="registration.html">Inscripciones</a>
-                <a href="blog.html">Blog</a>
-            </nav>
-        </div>
-    </header>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="about.html" class="active">Institución</a>
+            <a href="programs.html">Carreras Técnicas</a>
+            <a href="course.html">Cursos</a>
+            <a href="registration.html">Inscripciones</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+    </div>
+</header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+
+    <!-- HERO / INTRO -->
+    <section class="page-header">
+        <h1>Sobre INSTEUPAR</h1>
+        <p>Formando profesionales con educación técnica de calidad en Valledupar</p>
+    </section>
 
     <!-- HISTORIA -->
-    <section class="historia">
-        <h2>Nuestra Historia</h2>
+    <section class="historia container">
+        <div class="section-header">
+            <h2>Nuestra Historia</h2>
+        </div>
 
         <div class="historia-content">
-            <img src="img/institucion.jpg" alt="Institución INSTEUPAR">
+            <div class="historia-img">
+                <img src="img/institucion.jpg" alt="Instalaciones de INSTEUPAR">
+            </div>
 
-            <p>
-                El Instituto Técnico de Valledupar (INSTEUPAR) es una institución para el trabajo y desarrollo humano,
-                comprometida con ofrecer programas técnicos accesibles y de alta calidad, brindando oportunidades
-                educativas a toda la comunidad.
-            </p>
+            <div class="historia-text">
+                <p>
+                    El Instituto Técnico de Valledupar (INSTEUPAR) es una institución para el trabajo y desarrollo humano,
+                    comprometida con ofrecer programas técnicos accesibles y de alta calidad.
+                </p>
+
+                <p>
+                    Nuestra misión es brindar oportunidades educativas reales a la comunidad, formando estudiantes con
+                    habilidades prácticas y conocimientos sólidos para enfrentar el mundo laboral actual.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- MISIÓN Y VISIÓN -->
-    <section class="mision-vision">
+    <section class="mision-vision container">
 
-        <div class="box">
-            <h3>Misión</h3>
-            <p>
-                Proporcionar una educación de calidad en Valledupar que integre el aprendizaje teórico y práctico,
-                utilizando instalaciones adecuadas y recursos actualizados. Ofrecemos una amplia variedad de carreras
-                técnicas y cursos que impulsan el crecimiento profesional y preparan a nuestros estudiantes para
-                destacar en el mundo laboral.
-            </p>
+        <div class="section-header">
+            <h2>Nuestra Filosofía</h2>
         </div>
 
-        <div class="box">
-            <h3>Visión</h3>
-            <p>
-                Ser reconocidos como una institución líder en educación técnica en Valledupar y sus alrededores,
-                destacándonos por nuestro alto nivel académico, innovación y compromiso con el desarrollo profesional
-                de nuestros estudiantes, generando un impacto positivo en la sociedad.
-            </p>
+        <div class="mv-grid">
+
+            <article class="box">
+                <h3>Misión</h3>
+                <p>
+                    Proporcionar una educación de calidad en Valledupar que integre el aprendizaje teórico y práctico,
+                    utilizando instalaciones adecuadas y recursos actualizados.
+                </p>
+                <p>
+                    Ofrecemos programas técnicos y cursos que impulsan el crecimiento profesional y preparan a nuestros
+                    estudiantes para destacar en el mundo laboral.
+                </p>
+            </article>
+
+            <article class="box">
+                <h3>Visión</h3>
+                <p>
+                    Ser reconocidos como una institución líder en educación técnica en Valledupar y sus alrededores,
+                    destacándonos por nuestro alto nivel académico e innovación.
+                </p>
+                <p>
+                    Buscamos generar un impacto positivo en la sociedad formando profesionales capaces y competitivos.
+                </p>
+            </article>
+
         </div>
 
     </section>
 
     <!-- UBICACIÓN -->
     <section class="ubicacion">
-        <h2>Ubicación</h2>
 
-        <p>
-            Cra 15 #13B-60, Barrio Alfonso López <br>
-            Valledupar - Cesar
-        </p>
+        <div class="section-header">
+            <h2>Ubicación</h2>
+        </div>
 
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!..." 
-            width="100%" 
-            height="300" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
+        <div class="ubicacion-content container">
+
+            <div class="ubicacion-text">
+                <p><strong>Dirección:</strong></p>
+                <p>
+                    Cra 15 #13B-60<br>
+                    Barrio Alfonso López<br>
+                    Valledupar - Cesar
+                </p>
+            </div>
+
+            <div class="ubicacion-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!..." 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>© 2026 INSTEUPAR - Todos los derechos reservados</p>
-    </footer>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 INSTEUPAR - Todos los derechos reservados</p>
+</footer>
 
 </body>
 

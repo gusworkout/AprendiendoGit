@@ -1,117 +1,154 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripciones - Insteupar</title>
+    <title>Inscripciones - INSTEUPAR</title>
+
+    <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- FUENTE -->
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/arsenica">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-
+<!-- HEADER -->
 <header class="header-simple">
     <div class="top-bar">
         <div class="logo">INSTEUPAR</div>
+
         <nav class="nav">
             <a href="index.html">Inicio</a>
             <a href="about.html">Institución</a>
             <a href="programs.html">Carreras Técnicas</a>
             <a href="course.html">Cursos</a>
-            <a href="registration.html">Inscripciones</a>
+            <a href="registration.html" class="active">Inscripciones</a>
             <a href="blog.html">Blog</a>
         </nav>
     </div>
 </header>
 
+<!-- CONTENEDOR PRINCIPAL -->
+<main class="container">
 
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>Inscripciones Abiertas en INSTEUPAR</h1>
-            <p>Elige tu camino educativo y comienza tu futuro profesional</p>
-        </div>
+    <!-- ENCABEZADO -->
+    <section class="page-header">
+        <h1>Inscripciones Abiertas</h1>
+        <p>Elige tu camino educativo y comienza tu futuro profesional con INSTEUPAR</p>
+    </section>
 
-        <!-- Banner de Selección -->
-        <div id="selectionBanner" class="selection-banner">
-            <div class="option-card" onclick="selectOption('tecnico')">
-                <div class="icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h2>Cursos Técnicos</h2>
-                <p>Programas técnicos profesionales con certificación oficial. Duración de 6 a 12 meses.</p>
+    <!-- SELECCIÓN DE PROGRAMAS -->
+    <section id="selectionBanner" class="selection-banner">
+
+        <article class="option-card" onclick="selectOption('tecnico')">
+            <div class="icon">
+                <i class="fas fa-graduation-cap"></i>
             </div>
 
-            <div class="option-card" onclick="selectOption('normal')">
-                <div class="icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h2>Cursos Normales</h2>
-                <p>Cursos cortos y especializados para desarrollar habilidades específicas.</p>
+            <h2>Cursos Técnicos</h2>
+            <p>Programas técnicos con certificación oficial. Duración de 6 a 12 meses.</p>
+        </article>
+
+        <article class="option-card" onclick="selectOption('normal')">
+            <div class="icon">
+                <i class="fas fa-book-open"></i>
             </div>
+
+            <h2>Cursos Cortos</h2>
+            <p>Cursos especializados para desarrollar habilidades específicas.</p>
+        </article>
+
+    </section>
+
+    <!-- FORMULARIO -->
+    <section id="formContainer" class="form-container">
+
+        <button class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> Volver
+        </button>
+
+        <div class="form-header">
+            <h2 id="formTitle">Formulario de Inscripción</h2>
         </div>
 
-        <!-- Formulario -->
-        <div id="formContainer" class="form-container">
-            <button class="back-button" onclick="goBack()">
-                <i class="fas fa-arrow-left"></i> Volver a selección
+        <form id="inscriptionForm" onsubmit="handleSubmit(event)">
+
+            <div class="form-group">
+                <label for="nombre">Nombre completo <span class="required">*</span></label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Dirección <span class="required">*</span></label>
+                <input type="text" id="direccion" name="direccion" required placeholder="Ej: Cra 15 #13B-60">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono <span class="required">*</span></label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 3001234567">
+            </div>
+
+            <div class="form-group">
+                <label for="programa">Programa de interés <span class="required">*</span></label>
+                <select id="programa" name="programa" required>
+                    <option value="">Selecciona un programa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo electrónico (opcional)</label>
+                <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="privacidad" name="privacidad" required>
+                <label for="privacidad">
+                    He leído y acepto las 
+                    <a href="https://insteupar.edu.co/politica-privacidad/" target="_blank">
+                        políticas de privacidad
+                    </a> 
+                    <span class="required">*</span>
+                </label>
+            </div>
+
+            <button type="submit" class="submit-button">
+                <i class="fas fa-paper-plane"></i> Enviar inscripción
             </button>
 
-            <div class="form-header">
-                <h2 id="formTitle">Formulario de Inscripción</h2>
-            </div>
+        </form>
 
-            <form id="inscriptionForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label>Nombre Completo <span class="required">*</span></label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
-                </div>
+    </section>
 
-                <div class="form-group">
-                    <label>Dirección <span class="required">*</span></label>
-                    <input type="text" id="direccion" name="direccion" required placeholder="Ingresa tu dirección">
-                </div>
+</main>
 
-                <div class="form-group">
-                    <label>Teléfono <span class="required">*</span></label>
-                    <input type="tel" id="telefono" name="telefono" required placeholder="Ingresa tu número de teléfono">
-                </div>
+<!-- BOTONES FLOTANTES -->
+<div class="floating-buttons">
 
-                <div class="form-group">
-                    <label>Programa de interés <span class="required">*</span></label>
-                    <select id="programa" name="programa" required>
-                        <option value="">Selecciona un programa</option>
-                    </select>
-                </div>
+    <a href="https://www.instagram.com/insteupar/" target="_blank" 
+       class="floating-btn instagram-btn" title="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
 
-                <div class="form-group">
-                    <label>Correo electrónico (opcional)</label>
-                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
-                </div>
+    <a href="https://wa.me/573001234567" target="_blank" 
+       class="floating-btn whatsapp-btn" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="privacidad" name="privacidad" required>
-                    <label for="privacidad">He leído y acepto las <a href="https://insteupar.edu.co/politica-privacidad/" target="_blank">políticas de privacidad</a> <span class="required">*</span></label>
-                </div>
+</div>
 
-                <button type="submit" class="submit-button">
-                    <i class="fas fa-paper-plane"></i> Enviar Inscripción
-                </button>
-            </form>
-        </div>
-    </div>
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 INSTEUPAR - Todos los derechos reservados</p>
+</footer>
 
-    <!-- Logos Flotantes -->
-    <div class="floating-buttons">
-        <a href="https://www.instagram.com/insteupar/" target="_blank" class="floating-btn instagram-btn" title="Síguenos en Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://wa.me/573001234567" target="_blank" class="floating-btn whatsapp-btn" title="Contáctanos por WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+<!-- JS -->
+<script src="app.js"></script>
 
-    <script src="app.js"></script>
 </body>
 </html>
